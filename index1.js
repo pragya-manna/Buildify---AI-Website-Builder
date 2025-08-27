@@ -1,4 +1,3 @@
-// index1.js
 import fs from "fs";
 import readline from "readline";
 import fetch from "node-fetch"; //new added
@@ -6,7 +5,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import archiver from "archiver";   // <--- NEW
 
 
-// put your real API key here
+
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
@@ -195,11 +194,8 @@ app.get("/download", (req, res) => {
 });
 
 
-const PORT = process.env.PORT || 5500;
+app.listen(5500, () => console.log("🚀 Server running on http://localhost:5500"));
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});
 
 
 
