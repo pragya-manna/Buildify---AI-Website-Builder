@@ -7,7 +7,7 @@ import archiver from "archiver";   // <--- NEW
 
 
 // put your real API key here
-const genAI = new GoogleGenerativeAI("API");
+const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const rl = readline.createInterface({
@@ -196,5 +196,6 @@ app.get("/download", (req, res) => {
 
 
 app.listen(5500, () => console.log("🚀 Server running on http://localhost:5500"));
+
 
 
