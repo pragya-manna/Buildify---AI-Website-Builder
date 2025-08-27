@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Buildify — AI Website Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background decoration -->
+  <div class="bg-blobs">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <div class="nav__brand"><img src="img/logo.webp">
+    <span>Buildify</span></div>
+    <nav class="nav__links">
+      <a href="#home">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#features">Features</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <!-- HERO (Step 1) -->
+  <main id="home" class="hero">
+    <h1 class="hero__title">Build Smarter, Build Faster <span>with AI</span></h1>
+    <p class="hero__subtitle">Enter a prompt & let AI build your website instantly 🚀</p>
+
+    <div class="hero__input">
+      <input id="prompt" type="text" placeholder="Describe website e.g. 'Modern portfolio with projects & contact'"/>
+      <button id="generateBtn" class="btn btn--primary">
+        <span class="btn__glow"></span>
+        Generate
+      </button>
+    </div>
+
+    <div id="heroHint" class="hero__hint">Tip: be specific — “landing page for bakery, pastel colors, menu & contact form”.</div>
+  </main>
+
+  <!-- WORKSPACE (Step 2) -->
+  <section id="workspace" class="workspace hidden">
+    <!-- Left: Files -->
+    <aside class="files">
+      <h2 class="section-title">Files</h2>
+      <div class="file-list">
+        <a id="fileHtml" class="file-card" href="#" target="_blank" rel="noopener">
+          <span class="file-ext">.html</span>
+          <span class="file-name">index.html</span>
+        </a>
+        <a id="fileCss" class="file-card" href="#" target="_blank" rel="noopener">
+          <span class="file-ext">.css</span>
+          <span class="file-name">style.css</span>
+        </a>
+        <a id="fileJs" class="file-card" href="#" target="_blank" rel="noopener">
+          <span class="file-ext">.js</span>
+          <span class="file-name">script.js</span>
+        </a>
+      </div>
+
+      <button id="downloadZip" class="btn btn--glass file-zip">
+        ⬇️ Download ZIP
+      </button>
+    </aside>
+
+    <!-- Right: Preview -->
+    <section class="preview">
+      <div class="preview__topbar">
+        <div class="preview__title">Live Preview</div>
+        <div class="preview__actions">
+          <button id="previewDownload" class="icon-btn" title="Download current page">
+            ⬇️
+          </button>
+          <button id="previewMax" class="icon-btn" title="Open fullscreen">
+            ⛶
+          </button>
+        </div>
+      </div>
+      <iframe id="previewFrame" title="Generated Website Preview"></iframe>
+    </section>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2 class="section-title">About Buildify</h2>
+    <p class="about__text">
+      Buildify is an AI-powered website builder designed to turn your ideas into fully functional websites within seconds. With just a simple text prompt, it generates clean, responsive, and customizable code for HTML, CSS, and JavaScript. Whether you’re a student, professional, or entrepreneur, Buildify helps you create modern websites without the need for deep coding knowledge.
+<br><br><br>
+Unlike traditional builders, Buildify focuses on speed, flexibility, and creativity. You can instantly preview, download, and customize the generated sites, making it perfect for rapid prototyping or production-ready projects. By combining automation with simplicity, Buildify makes website creation accessible, efficient, and fun.
+    </p>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features">
+    <h2 class="section-title">Features</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Enter Prompt</h3><img src="img/prompt.png">
+        <p>Tell Buildify what to create using plain English.</p>
+      </div>
+      <div class="card">
+        <h3>Website Generated</h3><img src="img/generate.png">
+        <p>We craft HTML, CSS, and JS automatically.</p>
+      </div>
+      <div class="card">
+        <h3>Preview & Download</h3><img src="img/download.jpg">
+        <p>See it live, open fullscreen, or grab the files.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="friends" class="friends">
+  <h2 class="section-title">About Our Creators</h2>
+  <div class="friends-container">
+    
+    <!-- Friend card 1 -->
+    <div class="friend-card">
+      <img src="img/pragya.jpeg" alt="Me and Friend" class="friend-img" />
+      <div class="friend-info">
+        <h3>Pragya Manna</h3>
+        <p>Team Leader</p>
+      </div>
+    </div>
+    
+    <!-- Friend card 2 -->
+    <div class="friend-card">
+      <img src="img/kasturi.jpeg" alt="Friends Group" class="friend-img" />
+      <div class="friend-info">
+        <h3>Kasturi Bangar</h3>
+        <p>Team member 1</p>
+      </div>
+    </div>
+    
+    <!-- Friend card 3 -->
+    <div class="friend-card">
+      <img src="img/krushnali.jpeg" alt="Friends Party" class="friend-img" />
+      <div class="friend-info">
+        <h3>Krushnali Bavkar</h3>
+        <p>Team member 2</p>
+      </div>
+    </div>
+
+    <div class="friend-card">
+      <img src="img/shrushti.jpeg" alt="Friends Party" class="friend-img" />
+      <div class="friend-info">
+        <h3>Shrushti Daingade</h3>
+        <p>Team member 3</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  <!-- CONTACT + FAQ -->
+<section class="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <input type="tel" placeholder="Your Phone" />
+    <textarea placeholder="Your Message" rows="4"></textarea>
+    <button type="submit" class="btn btn--primary">Submit</button>
+  </form>
+</section>
+
+
+  <section id="faq" class="faq">
+  <h2 class="section-title">FAQ</h2>
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">How does it work?</button>
+      <div class="faq-answer">
+        <p>Enter a clear prompt → Generate → Preview → Download.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Can I customize the design?</button>
+      <div class="faq-answer">
+        <p>Yes, you can adjust colors, fonts, and layout after generating.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Is it free to use?</button>
+      <div class="faq-answer">
+        <p>Yes, the basic features are free. Premium options may be added later.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
