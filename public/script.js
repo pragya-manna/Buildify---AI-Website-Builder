@@ -37,7 +37,7 @@ generateBtn.addEventListener("click", async () => {
   generateBtn.innerText = "Generating…";
 
   try {
-    const res = await fetch("https://buildify-ai-website-builder.onrender.com/generate", {
+    const res = await fetch("/generate", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt })
@@ -78,7 +78,7 @@ generateBtn.addEventListener("click", async () => {
 
     // Download ZIP button (server route)
     downloadZipBtn.onclick = () => {
-      window.location.href = "https://buildify-ai-website-builder.onrender.com/download";
+      window.location.href = "/download";
     };
 
     // Reveal workspace with a smooth transition
@@ -113,4 +113,5 @@ document.querySelectorAll(".faq-question").forEach((btn) => {
   });
 
 });
+
 
