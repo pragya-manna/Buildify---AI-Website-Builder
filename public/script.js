@@ -1,56 +1,3 @@
-// document.getElementById("generateBtn").addEventListener("click", async () => {
-//   const prompt = document.getElementById("prompt").value.trim();
-//   if (!prompt) {
-//     alert("Please enter a description!");
-//     return;
-//   }
-
-//   // Call backend API (Express) → index1.js will generate files
-//   const res = await fetch("/generate", {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({ prompt })
-//   });
-
-//   const data = await res.json();
-//   const filesDiv = document.getElementById("files");
-//   filesDiv.innerHTML = "";
-
-//   // Show download links
-//   data.files.forEach(file => {
-//     const link = document.createElement("a");
-//     link.href = file.url;
-//     link.download = file.name;
-//     link.innerText = file.name;
-//     link.classList.add("file-link");
-//     filesDiv.appendChild(link);
-//   });
-
-//   // Show live preview (load generated index.html)
-//   document.getElementById("previewFrame").src = data.previewUrl;
-// });
-// document.getElementById("generateBtn").addEventListener("click", async () => {
-//   const prompt = document.getElementById("prompt").value;
-//   const res = await fetch("/generate", {
-//     method: "POST",
-//     headers: {"Content-Type":"application/json"},
-//     body: JSON.stringify({ prompt })
-//   });
-//   const data = await res.json();
-//   document.getElementById("preview").src = "/generated/index.html";
-// });
-
-// // Download code as zip
-// document.getElementById("downloadBtn").addEventListener("click", () => {
-//   window.location.href = "/download";
-// });
-
-// // Maximize preview
-// document.getElementById("maximizeBtn").addEventListener("click", () => {
-//   window.open("/generated/index.html", "_blank");
-// });
-
-
 const generateBtn     = document.getElementById("generateBtn");
 const promptInput     = document.getElementById("prompt");
 const workspace       = document.getElementById("workspace");
@@ -90,7 +37,7 @@ generateBtn.addEventListener("click", async () => {
   generateBtn.innerText = "Generating…";
 
   try {
-    const res = await fetch("/generate", {
+    const res = await fetch("https://buildify-ai-website-builder.onrender.com", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ prompt })
@@ -131,7 +78,7 @@ generateBtn.addEventListener("click", async () => {
 
     // Download ZIP button (server route)
     downloadZipBtn.onclick = () => {
-      window.location.href = "/download";
+      window.location.href = "https://buildify-ai-website-builder.onrender.com";
     };
 
     // Reveal workspace with a smooth transition
@@ -164,4 +111,5 @@ document.querySelectorAll(".faq-question").forEach((btn) => {
     // Toggle this one
     item.classList.toggle("active");
   });
+
 });
